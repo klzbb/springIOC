@@ -11,6 +11,16 @@ public class Class03 {
     public void test(){
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Bean bean = context.getBean("bean", Bean.class);
+
+        Bean bean2 = (Bean) context.getBean("bean");
+
         System.out.println("bean=" + bean);
+        bean.getMessage();
+
+        System.out.println("bean2=" + bean);
+        System.out.println(bean == bean2);
+        bean2.getMessage();
+
+        bean.testDogRun();
     }
 }
